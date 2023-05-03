@@ -65,12 +65,15 @@ export default defineComponent({
                 positionToHandle.selected = true;
                 positionToHandle.player = this.playerRound;
                 if (this.round % 2 == 0) {
+                    document.getElementById(`box${positionSelected}`).style.backgroundColor = "#FC440F";
                     this.playerRound = 1;
                 } else {
+                    document.getElementById(`box${positionSelected}`).style.backgroundColor = "#1F01B9";
                     this.playerRound = 2;
                 }
                 this.round++;
                 this.message = '';
+                console.log(positionSelected);
             } else {
                 this.message = 'Always selected';
             }
@@ -91,14 +94,14 @@ export default defineComponent({
   <p v-if="message">{{ message }}</p>
   <div class="morpion">
     <div @click="newRound(1)" id="box1"></div>
-    <div @click="newRound(2)"></div>
-    <div @click="newRound(3)"></div>
-    <div @click="newRound(4)"></div>
-    <div @click="newRound(5)"></div>
-    <div @click="newRound(6)"></div>
-    <div @click="newRound(7)"></div>
-    <div @click="newRound(8)"></div>
-    <div @click="newRound(9)"></div>
+    <div @click="newRound(2)" id="box2"></div>
+    <div @click="newRound(3)" id="box3"></div>
+    <div @click="newRound(4)" id="box4"></div>
+    <div @click="newRound(5)" id="box5"></div>
+    <div @click="newRound(6)" id="box6"></div>
+    <div @click="newRound(7)" id="box7"></div>
+    <div @click="newRound(8)" id="box8"></div>
+    <div @click="newRound(9)" id="box9"></div>
   </div>
 </template>
 
