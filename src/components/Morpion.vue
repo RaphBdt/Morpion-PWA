@@ -5,7 +5,55 @@ export default defineComponent({
   data() {
     return {
       round: 1,
-      playerRound: 1
+      playerRound: 1,
+      message: '',
+      positions: [
+        {
+            position: 1,
+            player: 0,
+            selected: false
+        },
+        {
+            position: 2,
+            player: 0,
+            selected: false
+        },
+        {
+            position: 3,
+            player: 0,
+            selected: false
+        },
+        {
+            position: 4,
+            player: 0,
+            selected: false
+        },
+        {
+            position: 5,
+            player: 0,
+            selected: false
+        },
+        {
+            position: 6,
+            player: 0,
+            selected: false
+        },
+        {
+            position: 7,
+            player: 0,
+            selected: false
+        },
+        {
+            position: 8,
+            player: 0,
+            selected: false
+        },
+        {
+            position: 9,
+            player: 0,
+            selected: false
+        },
+      ]
     }
   },
   methods: {
@@ -19,6 +67,8 @@ export default defineComponent({
 
             this.round++;
             console.log(position);
+        } else {
+            this.message = 'The game is finished';
         }
     }
   }
@@ -30,8 +80,9 @@ export default defineComponent({
     Round #{{ round }}
     <p :class="'player' + playerRound">Player {{ playerRound }}</p>
   </div>
+  <p v-if="message">{{ message }}</p>
   <div class="morpion">
-    <div @click="newRound(1)"></div>
+    <div @click="newRound(1)" id="box1"></div>
     <div @click="newRound(2)"></div>
     <div @click="newRound(3)"></div>
     <div @click="newRound(4)"></div>
