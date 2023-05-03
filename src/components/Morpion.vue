@@ -57,18 +57,26 @@ export default defineComponent({
     }
   },
   methods: {
-    newRound(position: Number) {
+    newRound(positionSelected: Number) {
         if (this.round < 10) {
-            if (this.round % 2 == 0) {
-                this.playerRound = 1;
+            let positionToHandle = this.positions.find(element => element.position == positionSelected);
+
+            if (positionToHandle?.selected == false) {
+                positionToHandle.selected = true;
+                positionToHandle.player = this.playerRound;
+                if (this.round % 2 == 0) {
+                    this.playerRound = 1;
+                } else {
+                    this.playerRound = 2;
+                }
+                this.round++;
+                this.message = '';
             } else {
-                this.playerRound = 2;
+                this.message = 'Always selected';
             }
 
-            this.round++;
-            console.log(position);
         } else {
-            this.message = 'The game is finished';
+            this.message = 'Finished';
         }
     }
   }
