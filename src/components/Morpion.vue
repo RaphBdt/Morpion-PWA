@@ -4,20 +4,31 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   data() {
     return {
-      round: 1
+      round: 1,
+      playerRound: 1
     }
   },
   methods: {
     newRound(position: Number) {
-        console.log(position);
+        if (this.round < 10) {
+            if (this.round % 2 == 0) {
+                this.playerRound = 1;
+            } else {
+                this.playerRound = 2;
+            }
+
+            this.round++;
+            console.log(position);
+        }
     }
   }
 })
 </script>
 
 <template>
-  <div class="card">
+  <div v-if="round < 10">
     Round #{{ round }}
+    <p :class="'player' + playerRound">Player {{ playerRound }}</p>
   </div>
   <div class="morpion">
     <div @click="newRound(1)"></div>
@@ -41,6 +52,18 @@ export default defineComponent({
     .morpion div {
         width: 70px;
         height: 70px;
-        border: 1px solid #333333;
+        border: 1px solid #7C9299;
+    }
+
+    .player1, .player2 {
+        color: #ffffff;
+    }
+
+    .player1 {
+        background-color: #1F01B9;
+    }
+
+    .player2 {
+        background-color: #FC440F;
     }
 </style>
