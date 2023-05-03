@@ -1,25 +1,34 @@
-<script setup lang="ts">
-import { ref } from 'vue'
+<script lang="ts">
+import { defineComponent } from 'vue'
 
-defineProps<{ msg: string }>()
-
-const round = ref(1)
+export default defineComponent({
+  data() {
+    return {
+      round: 1
+    }
+  },
+  methods: {
+    newRound(position: Number) {
+        console.log(position);
+    }
+  }
+})
 </script>
 
 <template>
   <div class="card">
-    <button type="button" @click="round++">Round #{{ round }}</button>
+    Round #{{ round }}
   </div>
   <div class="morpion">
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
-    <div></div>
+    <div @click="newRound(1)"></div>
+    <div @click="newRound(2)"></div>
+    <div @click="newRound(3)"></div>
+    <div @click="newRound(4)"></div>
+    <div @click="newRound(5)"></div>
+    <div @click="newRound(6)"></div>
+    <div @click="newRound(7)"></div>
+    <div @click="newRound(8)"></div>
+    <div @click="newRound(9)"></div>
   </div>
 </template>
 

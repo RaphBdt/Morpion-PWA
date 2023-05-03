@@ -3,7 +3,7 @@ import Morpion from './components/Morpion.vue'
 </script>
 
 <template>
-  <Morpion msg="Vite + Vue" />
+  <Morpion />
 </template>
 
 <style scoped>
