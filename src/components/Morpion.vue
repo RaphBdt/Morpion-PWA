@@ -84,67 +84,56 @@ export default defineComponent({
                 } else if (positionSelected == 2) {
                     if (this.round % 2 == 0) {
                         this.box2P2 = !this.box2P2;
-                        this.playerRound = 1;
                     } else {
                         this.box2P1 = !this.box2P1;
-                        this.playerRound = 2;
                     }
                 } else if (positionSelected == 3) {
                     if (this.round % 2 == 0) {
                         this.box3P2 = !this.box3P2;
-                        this.playerRound = 1;
                     } else {
                         this.box3P1 = !this.box3P1;
-                        this.playerRound = 2;
                     }
                 } else if (positionSelected == 4) {
                     if (this.round % 2 == 0) {
                         this.box4P2 = !this.box4P2;
-                        this.playerRound = 1;
                     } else {
                         this.box4P1 = !this.box4P1;
-                        this.playerRound = 2;
                     }
                 } else if (positionSelected == 5) {
                     if (this.round % 2 == 0) {
                         this.box5P2 = !this.box5P2;
-                        this.playerRound = 1;
                     } else {
                         this.box5P1 = !this.box5P1;
-                        this.playerRound = 2;
                     }
                 } else if (positionSelected == 6) {
                     if (this.round % 2 == 0) {
                         this.box6P2 = !this.box6P2;
-                        this.playerRound = 1;
                     } else {
                         this.box6P1 = !this.box6P1;
-                        this.playerRound = 2;
                     }
                 } else if (positionSelected == 7) {
                     if (this.round % 2 == 0) {
                         this.box7P2 = !this.box7P2;
-                        this.playerRound = 1;
                     } else {
                         this.box7P1 = !this.box7P1;
-                        this.playerRound = 2;
                     }
                 } else if (positionSelected == 8) {
                     if (this.round % 2 == 0) {
                         this.box8P2 = !this.box8P2;
-                        this.playerRound = 1;
                     } else {
                         this.box8P1 = !this.box8P1;
-                        this.playerRound = 2;
                     }
                 } else if (positionSelected == 9) {
                     if (this.round % 2 == 0) {
                         this.box9P2 = !this.box9P2;
-                        this.playerRound = 1;
                     } else {
                         this.box9P1 = !this.box9P1;
-                        this.playerRound = 2;
                     }
+                }
+                if (this.round % 2 == 0) {
+                    this.playerRound = 1;
+                } else {
+                    this.playerRound = 2;
                 }
                 this.round++;
                 this.message = '';
