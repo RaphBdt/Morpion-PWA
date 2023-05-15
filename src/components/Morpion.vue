@@ -48,22 +48,103 @@ export default defineComponent({
       ],
       box1P1: false,
       box1P2: false,
+      box2P1: false,
+      box2P2: false,
+      box3P1: false,
+      box3P2: false,
+      box4P1: false,
+      box4P2: false,
+      box5P1: false,
+      box5P2: false,
+      box6P1: false,
+      box6P2: false,
+      box7P1: false,
+      box7P2: false,
+      box8P1: false,
+      box8P2: false,
+      box9P1: false,
+      box9P2: false,
     }
   },
   methods: {
     newRound(positionSelected: Number) {
-        this.box1P1 = !this.box1P1;
         if (this.round < 10 && this.winner == 0) {
             let positionToHandle = this.positions.find(element => element.position == positionSelected);
 
             if (positionToHandle?.player == 0) {
                 positionToHandle.player = this.playerRound;
-                if (this.round % 2 == 0) {
-                    this.box1P2 = !this.box1P2;
-                    this.playerRound = 1;
-                } else {
-                    this.box1P1 = !this.box1P1;
-                    this.playerRound = 2;
+                if (positionSelected == 1) {
+                    if (this.round % 2 == 0) {
+                        this.box1P2 = !this.box1P2;
+                        this.playerRound = 1;
+                    } else {
+                        this.box1P1 = !this.box1P1;
+                        this.playerRound = 2;
+                    }
+                } else if (positionSelected == 2) {
+                    if (this.round % 2 == 0) {
+                        this.box2P2 = !this.box2P2;
+                        this.playerRound = 1;
+                    } else {
+                        this.box2P1 = !this.box2P1;
+                        this.playerRound = 2;
+                    }
+                } else if (positionSelected == 3) {
+                    if (this.round % 2 == 0) {
+                        this.box3P2 = !this.box3P2;
+                        this.playerRound = 1;
+                    } else {
+                        this.box3P1 = !this.box3P1;
+                        this.playerRound = 2;
+                    }
+                } else if (positionSelected == 4) {
+                    if (this.round % 2 == 0) {
+                        this.box4P2 = !this.box4P2;
+                        this.playerRound = 1;
+                    } else {
+                        this.box4P1 = !this.box4P1;
+                        this.playerRound = 2;
+                    }
+                } else if (positionSelected == 5) {
+                    if (this.round % 2 == 0) {
+                        this.box5P2 = !this.box5P2;
+                        this.playerRound = 1;
+                    } else {
+                        this.box5P1 = !this.box5P1;
+                        this.playerRound = 2;
+                    }
+                } else if (positionSelected == 6) {
+                    if (this.round % 2 == 0) {
+                        this.box6P2 = !this.box6P2;
+                        this.playerRound = 1;
+                    } else {
+                        this.box6P1 = !this.box6P1;
+                        this.playerRound = 2;
+                    }
+                } else if (positionSelected == 7) {
+                    if (this.round % 2 == 0) {
+                        this.box7P2 = !this.box7P2;
+                        this.playerRound = 1;
+                    } else {
+                        this.box7P1 = !this.box7P1;
+                        this.playerRound = 2;
+                    }
+                } else if (positionSelected == 8) {
+                    if (this.round % 2 == 0) {
+                        this.box8P2 = !this.box8P2;
+                        this.playerRound = 1;
+                    } else {
+                        this.box8P1 = !this.box8P1;
+                        this.playerRound = 2;
+                    }
+                } else if (positionSelected == 9) {
+                    if (this.round % 2 == 0) {
+                        this.box9P2 = !this.box9P2;
+                        this.playerRound = 1;
+                    } else {
+                        this.box9P1 = !this.box9P1;
+                        this.playerRound = 2;
+                    }
                 }
                 this.round++;
                 this.message = '';
@@ -122,14 +203,14 @@ export default defineComponent({
   <p v-if="message">{{ message }}</p>
   <div class="morpion">
     <div @click="newRound(1)" :class="{ player1: box1P1, player2: box1P2 }"></div>
-    <div @click="newRound(2)" id="box2"></div>
-    <div @click="newRound(3)" id="box3"></div>
-    <div @click="newRound(4)" id="box4"></div>
-    <div @click="newRound(5)" id="box5"></div>
-    <div @click="newRound(6)" id="box6"></div>
-    <div @click="newRound(7)" id="box7"></div>
-    <div @click="newRound(8)" id="box8"></div>
-    <div @click="newRound(9)" id="box9"></div>
+    <div @click="newRound(2)" :class="{ player1: box2P1, player2: box2P2 }"></div>
+    <div @click="newRound(3)" :class="{ player1: box3P1, player2: box3P2 }"></div>
+    <div @click="newRound(4)" :class="{ player1: box4P1, player2: box4P2 }"></div>
+    <div @click="newRound(5)" :class="{ player1: box5P1, player2: box5P2 }"></div>
+    <div @click="newRound(6)" :class="{ player1: box6P1, player2: box6P2 }"></div>
+    <div @click="newRound(7)" :class="{ player1: box7P1, player2: box7P2 }"></div>
+    <div @click="newRound(8)" :class="{ player1: box8P1, player2: box8P2 }"></div>
+    <div @click="newRound(9)" :class="{ player1: box9P1, player2: box9P2 }"></div>
   </div>
 </template>
 
