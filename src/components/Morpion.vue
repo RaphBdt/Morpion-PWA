@@ -45,21 +45,24 @@ export default defineComponent({
             position: 9,
             player: 0,
         },
-      ]
+      ],
+      box1P1: false,
+      box1P2: false,
     }
   },
   methods: {
     newRound(positionSelected: Number) {
+        this.box1P1 = !this.box1P1;
         if (this.round < 10 && this.winner == 0) {
             let positionToHandle = this.positions.find(element => element.position == positionSelected);
 
             if (positionToHandle?.player == 0) {
                 positionToHandle.player = this.playerRound;
                 if (this.round % 2 == 0) {
-                    document.getElementById(`box${positionSelected}`).style.backgroundColor = "#FC440F";
+                    this.box1P2 = !this.box1P2;
                     this.playerRound = 1;
                 } else {
-                    document.getElementById(`box${positionSelected}`).style.backgroundColor = "#1F01B9";
+                    this.box1P1 = !this.box1P1;
                     this.playerRound = 2;
                 }
                 this.round++;
@@ -118,7 +121,7 @@ export default defineComponent({
   </div>
   <p v-if="message">{{ message }}</p>
   <div class="morpion">
-    <div @click="newRound(1)" id="box1"></div>
+    <div @click="newRound(1)" :class="{ player1: box1P1, player2: box1P2 }"></div>
     <div @click="newRound(2)" id="box2"></div>
     <div @click="newRound(3)" id="box3"></div>
     <div @click="newRound(4)" id="box4"></div>
