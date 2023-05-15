@@ -76,10 +76,8 @@ export default defineComponent({
                 if (positionSelected == 1) {
                     if (this.round % 2 == 0) {
                         this.box1P2 = !this.box1P2;
-                        this.playerRound = 1;
                     } else {
                         this.box1P1 = !this.box1P1;
-                        this.playerRound = 2;
                     }
                 } else if (positionSelected == 2) {
                     if (this.round % 2 == 0) {
